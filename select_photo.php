@@ -7,6 +7,8 @@ include_once 'connect.php';
 selects an entry from photos table given a timestamp.
 The return value is an array with its elements in the same
 order as the database table.
+
+Returns null if no photo is found.
 */
 
 function select_photo($timestamp){
