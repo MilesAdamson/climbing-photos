@@ -3,6 +3,11 @@
 include 'strings.php';
 Header(CONTENT_TYPE_HEADER);
 
+/*
+inserts a new row into the photos table,
+based on the information posted
+*/
+
 if($_SERVER["REQUEST_METHOD"]=="POST")
 {
 	include 'connect.php';
@@ -38,8 +43,6 @@ function insert()
 	} else{
 		$base64image = null;
 	}
-	
-
 	
 	$response = array();
 	

@@ -2,10 +2,16 @@
 
 include 'strings.php';	
 
+/*
+echos the base64 encoded string which represents a 
+random image saved on the server. 
+*/
+
 if($_SERVER["REQUEST_METHOD"]=="GET")
 {
 	// remove random dots from start of array
 	$files = array_diff(scandir(PHOTO_PATH), array('..', '.'));
+	
 	// correct index issues caused by the dots at the start of array
 	$zeroIndexedFiles = array();
 	foreach ($files as $columnName => $columnData) {

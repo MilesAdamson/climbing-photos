@@ -1,6 +1,6 @@
 <?php
 
-include 'strings.php';
+include_once 'strings.php';
 
 $connect = mysqli_connect(hostname, user, password, databaseName)
 OR die('Could not connect: '.mysqli_connect_error());
