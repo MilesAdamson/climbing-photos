@@ -1,12 +1,9 @@
 <?php	
-
 include 'strings.php';	
-
 /*
 echos the base64 encoded string which represents a 
 random image saved on the server. 
 */
-
 if($_SERVER["REQUEST_METHOD"]=="GET")
 {
 	// remove random dots from start of array
@@ -20,13 +17,17 @@ if($_SERVER["REQUEST_METHOD"]=="GET")
 	
 	// choose a random file and get its filename
 	$randomIndex = rand(0, sizeof($zeroIndexedFiles) - 1);
-	$randomFilename = $zeroIndexedFiles[$randomIndex];
-	
-	// open and read file
-	$path = PHOTO_PATH."$randomFilename";
-	$handle = fopen($path, "rb");
-	$contents = fread($handle, filesize($path));
-	echo $contents;
+	$randomFilename = "http://192.168.1.69/climb/photos/".$zeroIndexedFiles[$randomIndex];
 
+	echo $randomFilename;
+	
+	/*
+	$fp = fopen($randomFilename, 'rb');
+
+	header("Content-Type: image/jpg");
+	header("Content-Length: " . filesize($randomFilename));
+
+	fpassthru($fp);
+	*/
 }
 ?>
