@@ -3,7 +3,7 @@
 include_once 'strings.php';
 include_once 'connect.php';
 include_once 'connect.php';
-include_once 'select_photo.php';
+include_once 'select_photo_db.php';
 	
 Header(CONTENT_TYPE_HEADER);
 
